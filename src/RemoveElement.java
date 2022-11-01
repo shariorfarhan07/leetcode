@@ -18,7 +18,7 @@ public class RemoveElement {
               l++;
 
           }
-           System.out.println(r+" "+l);
+//           System.out.println(r+" "+l);
 
 
        }
