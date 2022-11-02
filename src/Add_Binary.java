@@ -1,39 +1,54 @@
 public class Add_Binary {
     public String addBinary(String a, String b) {
-        String s="",ext;
-        int aa=a.length();
-        int bb=b.length();
-        char temp='0';
-        int min=(aa<bb)?aa:bb;
-        for (int i = 1; i <=min ; i++) {
-            System.out.println(a.charAt(aa-i)+"    "+b.charAt(bb-i));
-            if      (a.charAt(aa-i)=='1'&&'1'==b.charAt(bb-i)) {
+       int aa=a.length()-1,bb=b.length()-1;
+       String temp="0",s="";
+       while (aa>=0 && bb>=0){
+           if (a.charAt(aa)=='0' && b.charAt(bb)=='0'){
+               s=temp+s;
+               temp="0";
+           } else if (a.charAt(aa)=='1' && b.charAt(bb)=='1') {
+               s=temp+s;
+               temp="1";
+           }else if ((a.charAt(aa)=='1' || b.charAt(bb)=='1') && temp=="0") {
+               s="1"+s;
+               temp="0";
+           }else if ((a.charAt(aa)=='1' || b.charAt(bb)=='1') && temp=="1") {
+               temp="1";
+               s="0"+s;
+           }
+           aa--;
+           bb--;
+       }
+        while (aa>=0 ){
+          if (temp=="1" && a.charAt(aa)=='1' ){
+              s="0"+s;
+          } else if (temp=="1" && a.charAt(aa)=='0') {
+              s=temp+s;
+              temp="0";
+          }else{
+              s=a.charAt(aa)+s;
+          }
+          aa--;
+        }
 
+        while (bb>=0 ){
+            if (temp=="1" && b.charAt(bb)=='1' ){
+                s="0"+s;
+            } else if (temp=="1" && b.charAt(bb)=='0') {
                 s=temp+s;
-                temp='1';
-
+                temp="0";
+            }else{
+                s=b.charAt(bb)+s;
             }
-            else if (a.charAt(aa-i)=='0'&&'0'==b.charAt(bb-i)) {
-                s=temp+s;
-                if (temp=='1')temp='0';
-            }
+            bb--;
         }
-        if (aa>bb){
-            ext=b.substring(0,bb-aa);
-            if (temp=='1'){}
-            else{s=ext+s;}
+        if (temp=="1") s="1"+s;
 
-        }
-        else if (aa<bb){
-            ext=b.substring(0,bb-aa);
-            if (temp=='1'){}
-            else{s=ext+s;}
-        }
-        if (temp=='1')s=temp+s;
-        return s;
+       return s;
     }
+//"1001001"
 
     public static void main(String[] args) {
-        System.out.println(new Add_Binary().addBinary("10101","101"));
+        System.out.println(new Add_Binary().addBinary("110010","10111"));
     }
 }
