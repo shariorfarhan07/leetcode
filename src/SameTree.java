@@ -1,6 +1,6 @@
 public class SameTree {
 //     when you think too much for a simple problem.
-    public boolean isSameTree(TreeNode p, TreeNode q) {
+    public boolean isSameTree(treeNode p, treeNode q) {
         if (q==null&&p==null) return true;
         if (q==null||p==null||(p.val!= q.val)||(p.right!=null &&q.right==null )||(q.right!=null &&p.right==null ))return false;
         boolean check=true;
@@ -11,7 +11,7 @@ public class SameTree {
         return check;
     }
 //     when you think smartly this type of solution comes in mind
-public boolean isSameTree2(TreeNode p, TreeNode q) {
+public boolean isSameTree2(treeNode p, treeNode q) {
     if (q==null&&p==null) return true;
     if (q==null||p==null|| p.val!=q.val)return  false;
     return isSameTree( p.right,  q.right )&& isSameTree( p.left,  q.left );
@@ -20,13 +20,13 @@ public boolean isSameTree2(TreeNode p, TreeNode q) {
 
 
 
-  class TreeNode {
+  class treeNode {
       int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode() {}
-      TreeNode(int val) { this.val = val; }
-      TreeNode(int val, TreeNode left, TreeNode right) {
+      treeNode left;
+      treeNode right;
+      treeNode() {}
+      treeNode(int val) { this.val = val; }
+      treeNode(int val, treeNode left, treeNode right) {
           this.val = val;
           this.left = left;
           this.right = right;
