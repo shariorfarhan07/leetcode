@@ -7,10 +7,7 @@ public class RemoveDuplicatesfromSortedArray {
     public int removeDuplicates2(int[] nums) {
         int r=1,l=1,ret;
         while (r< nums.length && l< nums.length){
-            if (nums[r-1]!=nums[r]){
-                nums[l]=nums[r];
-                l++;
-            }
+            if (nums[r-1]!=nums[r])nums[l++]=nums[r];
             r++;
         }
         ret=l;
