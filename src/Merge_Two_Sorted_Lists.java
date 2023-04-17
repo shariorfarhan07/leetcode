@@ -1,4 +1,32 @@
 public class Merge_Two_Sorted_Lists {
+
+
+     public ListNode mergeTwoListsBest(ListNode list1, ListNode list2) {
+        ListNode newlist=new ListNode();
+
+        ListNode itarator=newlist;
+        while (list1!=null && list2!=null){
+            if (list1.val<list2.val){
+                itarator.next=list1;
+                list1=list1.next;
+            }else {
+                itarator.next=list2;
+                list2=list2.next;
+            }
+            itarator=itarator.next;
+        }
+
+        if (list1!=null)itarator.next=list1;
+        if (list2!=null)itarator.next=list2;
+
+
+        return newlist.next;
+    }
+
+
+
+
+
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         ListNode newlist;
         if (list1!=null&&list1.val<list2.val){
