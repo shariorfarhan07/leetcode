@@ -16,7 +16,7 @@ public class FindtheindexoftheFirstOccurrenceinaString {
         int f=0,s=0;
         while (f<haystackLength && s<needleLength){
 //            System.out.println("-->"+haystack.charAt(f)+" "+needle.charAt(s));
-//            System.out.println(f+" "+s); lalalala
+//            System.out.println(f+" "+s); lalalalasd
             if (haystack.charAt(f)==needle.charAt(s)){
                 s++;
                 f++;
