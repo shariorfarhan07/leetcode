@@ -2,8 +2,8 @@ public class Add_Two_Numbers {
     public static void main(String[] args) {
 //        ListNode l1=new ListNode(9,new ListNode(9,new ListNode(9,new ListNode(9,new ListNode(9,new ListNode(9,new ListNode(9,new ListNode(1))))))));
 //        ListNode l2=new ListNode(9,new ListNode(9,new ListNode(9,new ListNode(9,new ListNode(9,new ListNode(9,new ListNode(9)))))));
-        ListNode l2=new ListNode(9,new ListNode(9,new ListNode(9)));
-        ListNode l1=new ListNode(9,new ListNode(9,new ListNode(9,new ListNode(9,new ListNode(9,new ListNode(9,new ListNode(9,new ListNode(1))))))));
+        ListNode l1=new ListNode(9,new ListNode(9,new ListNode(9)));
+        ListNode l2=new ListNode(9,new ListNode(9,new ListNode(9,new ListNode(9,new ListNode(9,new ListNode(9,new ListNode(9,new ListNode(1))))))));
         printlist(l1);
         printlist(l2);
         printlist(addTwoNumbers(l1,l2));
@@ -18,7 +18,31 @@ public class Add_Two_Numbers {
         System.out.println();
     }
 
+//    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+//        ListNode last=null,tail=l1,head=l1;
+//        int sum=0;
+//        while (l1!=null || l2!=null){
+//            sum=((l1!=null)? l1.val : 0)+((l2!=null)? l2.val : 0)+sum;
+//            tail.val=sum%10;
+//            System.out.println(sum);
+//            sum=sum/10;
+//            if (tail.next==null) last=tail;
+//            tail=tail.next;
+//
+//            if (l1!=null) l1=l1.next;
+//            if (l2!=null) l2=l2.next;
+//            if (l2!=null ) if ( l1.next==null ) l1.next= l2.next;
+//
+//        }
+//        if (sum!=0) last.next=new ListNode(sum);
+//        return head;
+//    }
 
+
+
+
+
+//     works with single for loop
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head=new ListNode();
         ListNode tail=head;
@@ -41,7 +65,7 @@ public class Add_Two_Numbers {
 
 
 
-
+    // works
     public static ListNode addTwoNumbersbest(ListNode l1, ListNode l2) {
         ListNode head=new ListNode();
         ListNode tail=head;
