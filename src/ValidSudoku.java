@@ -1,33 +1,30 @@
+import java.util.HashMap;
+
 public class ValidSudoku {
     public boolean isValidSudoku(char[][] board) {
-
-        return false;
-    }
-    public boolean leanerCheckz(char[][] board,int row) {
-        boolean checker[]=new boolean[9];
-        int n;
-        for (int i = 0; i < board[row].length; i++) {
-            n=Integer.parseInt(""+board[row][i]);
-            if (n<=9 && n>=0) break;
-            else if (checker[n]) {
-                return true;
-            }else checker[n]=true;
+        boolean b=true;
+        for(int i = 0; i < board.length; i++) {
+            b=leanerCheckx(board,i)&& leanerChecky(board,i);
+            if (!b) break;
         }
 
-        return false;
+        return b;
+    }
+    public boolean leanerCheckx(char[][] board,int row) {
+        HashMap<Character,Integer> need=new HashMap<>();
+        for(int i = 0; i < board.length; i++) {
+            if (!".".equals(board[row][i]) && need.containsKey(board[i][row])) return false;
+            need.put(board[i][row],i);
+        }
+        return true;
     }
     public boolean leanerChecky(char[][] board,int col) {
-        boolean checker[]=new boolean[9];
-        int n;
-        for (int i = 0; i < board[col].length; i++) {
-            n=Integer.parseInt(""+board[i][col]);
-            if (n<=9 && n>=0) break;
-            else if (checker[n]) {
-                return true;
-            }else checker[n]=true;
+        HashMap<Character,Integer> need=new HashMap<>();
+        for(int i = 0; i < board.length; i++) {
+            if (! ".".equals(board[col][i]) && need.containsKey(board[col][i])) return false;
+            need.put(board[col][i],i);
         }
-
-        return false;
+        return true;
     }
     
     
