@@ -1,6 +1,25 @@
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class ValidSudoku {
+
+    public boolean isValidSudokubest(char[][] board) {
+        HashSet<String> need=new HashSet<>();
+
+        for(int i = 0; i <board.length ; i++) {
+            for(int j = 0; j < board.length; j++) {
+                char c=board[i][j];
+                if ('.'!=c){
+                    if (!need.add(c+"row"+i) ||!need.add(c+"col"+j) ||!need.add(c+"grid"+i/3+" "+j/3)) return false;
+                }
+            }
+        }
+        return true;
+    }
+
+
+
+
     public boolean isValidSudoku(char[][] board) {
         boolean b=true;
         for(int i = 0; i < board.length; i++) {
