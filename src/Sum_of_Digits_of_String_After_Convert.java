@@ -4,9 +4,6 @@ public class Sum_of_Digits_of_String_After_Convert {
         System.out.println(getLucky("iiii",1));
         System.out.println(getLucky("leetcode",2));
     }
-
-
-
     public static int getLucky(String s, int k) {
     int n=0;
     String ss="";
@@ -22,8 +19,6 @@ public class Sum_of_Digits_of_String_After_Convert {
         ss="";
         ss=ss+n;
     }
-
-
     return n;
     }
 }
