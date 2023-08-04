@@ -3,34 +3,34 @@ import java.util.Arrays;
 public class Remove_Duplicates_from_Sorted_Array_II {
 
     public static void main(String[] args) {
-        int[] a=new int[]{1, 1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 5, 6};
+        int[] a=new int[]{1, 1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 5,5, 6};
+        System.out.println(removeDuplicates(a));
+        a=new int[]{1,1,1,2,2,3};
+        System.out.println(removeDuplicates(a));
+        a=new int[]{0,0,1,1,1,1,2,3,3};
         System.out.println(removeDuplicates(a));
 
     }
     public static int removeDuplicates(int[] nums) {
-        int count=0,i=0,j=1,zeros=0;
-        boolean isdouble=true;
-        while (i<nums.length && j<nums.length){
-        if (nums[i]==nums[j]){
-            count++;
-
-            if (count>=2 && isdouble){
-                i++;
-                isdouble=false;
+        System.out.println(Arrays.toString(nums));
+        int count=0,l=0,r=0,numbersElement=0;
+        while (l<nums.length && r<nums.length-1){
+            while (nums[r]==nums[r+1]){
+             count++;
+             r++;
             }
-        }else {
-
-            count=0;
-            nums[i]=nums[j];
-            isdouble=true;
-
+            while (l<((count<=2)? count:2)){
+                l++;
             }
-        j++;
+
+
+
+
 
         }
-
-
-
-    return zeros;
+        numbersElement=i++;
+        while (i<nums.length) nums[i++]=0;
+        System.out.println(Arrays.toString(nums));
+        return numbersElement;
     }
 }
