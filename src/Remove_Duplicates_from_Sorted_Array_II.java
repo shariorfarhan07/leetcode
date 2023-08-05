@@ -13,25 +13,29 @@ public class Remove_Duplicates_from_Sorted_Array_II {
         System.out.println(removeDuplicates(a));
 
     }
-    public static int removeDuplicates(int[] nums) {
+ public static int removeDuplicates(int[] nums) {
 //        System.out.println(Arrays.toString(nums));
-        if (nums.length<3) return 3;
-        int count=0,l=2,r=2;
-        while (l<nums.length&&r<nums.length) {
-            if (nums[r-2]==nums[r] ){
-                r++;
-            }else{
-                nums[l]=nums[r];
-                if (nums[r-1]==nums[r]) l++;
-                l++;
-                r++;
-            }
+            if (nums.length<3) return 3;
+            int count=0,l=2,r=2;
+            while (l<nums.length&&r<nums.length) {
+                if (nums[r-2]==nums[r] ){
+                    r++;
+                }else{
+                    nums[l]=nums[r];
+                    if (nums[r-1]==nums[r]) l++;
+                    l++;
+                    r++;
+                    count++;
+                }
 
 //            System.out.println("= "+Arrays.toString(nums));
+            }
+            System.out.println(count);
+            while (l<nums.length)nums[l++]=0;
+            while (nums[--l]==0) count++;
+            System.out.println(Arrays.toString(nums)+count);
+            return nums.length-count;
         }
-        count=l--;
-        while (l<nums.length)nums[l++]=0;
-//        System.out.println(Arrays.toString(nums));
-        return count;
-    }
+
+
 }
