@@ -12,9 +12,16 @@ public class Remove_Duplicates_from_Sorted_Array_II {
         a=new int[]{1,1,1,2,2,3};
         System.out.println(removeDuplicates(a));
 
+
+        a=new int[]{1,2,3};
+        System.out.println(removeDuplicates(a));
+
+        a=new int[]{1,1,1};
+        System.out.println(removeDuplicates(a));
+
     }
 
-//    this one works
+//    this one works fails for {1,2,3}
     public static int removeDuplicates(int[] nums) {
         int n = nums.length;
         if(n <= 2)
