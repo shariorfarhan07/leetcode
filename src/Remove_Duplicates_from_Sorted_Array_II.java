@@ -27,6 +27,25 @@ public class Remove_Duplicates_from_Sorted_Array_II {
         System.out.println(removeDuplicates(a));
         removeDuplicates(a);
 
+        a=new int[]{0,0,1,1,1,1,2,3,3};
+        System.out.println(removeDuplicates(a));
+        removeDuplicates(a);
+
+    }
+
+
+    public static int removeDuplicates(int[] nums){
+        int l=1,r=1,pointer=1;
+        while (r<nums.length){
+            while (r<nums.length && nums[l]==nums[r]) r++;
+            System.out.println(Arrays.toString(nums)+"r:"+r+" l:"+l);
+            for(int i = 0; i <2&&r<nums.length ; i++) {
+                l=r;
+                nums[++pointer]=nums[r++];}
+
+        }
+        printArray(nums,l+1);
+        return l+1;
     }
 
     private static void printArray(int[] a, int removeDuplicates) {
@@ -34,25 +53,26 @@ public class Remove_Duplicates_from_Sorted_Array_II {
         System.out.print("{");
         for(int i = 0; i < removeDuplicates; i++) {
         System.out.print(a[i]+((removeDuplicates==i+1)?"}":","));
+
         }
         System.out.println();
     }
 
-    public static int removeDuplicates(int[] nums){
+    public static int removeDuplicates3(int[] nums){
         int l=1,r=1;
         while (r<nums.length){
             while (r<nums.length && nums[l]==nums[r]) r++;
-//            System.out.println(Arrays.toString(nums)+"r:"+r+" l:"+l);
-            for(int i = 0; i <2&&r<nums.length ; i++) {
+            System.out.println(Arrays.toString(nums)+"r:"+r+" l:"+l);
+            for(int i = 0; i <2&&r<nums.length ; i++)
                 nums[++l]=nums[r++];
-            }
+
 
         }
         printArray(nums,l+1);
         return l+1;
     }
     //    this one works fails for {1,2,3}
-    public static int removeDuplicates3(int[] nums) {
+    public static int removeDuplicates5(int[] nums) {
         int n = nums.length;
         if(n <= 2)
             return n;
