@@ -4,6 +4,7 @@ public class Container_With_Most_Water {
         int[] array=new int[]{1,8,6,2,5,4,8,3,7};
         System.out.println(maxArea(array));
     }
+//     2 pointer
     public static int maxArea(int[] height) {
         int right=height.length-1,left=0,maximumArea=0,currentArea=0;
         while (left<right){
@@ -18,6 +19,8 @@ public class Container_With_Most_Water {
         }
         return maximumArea;
     }
+
+    //brute force
     public static int maxArea1(int[] height) {
         int max=0;
         int smallOne=0;
