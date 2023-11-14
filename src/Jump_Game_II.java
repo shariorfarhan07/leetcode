@@ -21,13 +21,9 @@ public class Jump_Game_II {
         for(int i = 0; i < steps.length-1; i++) {
             max+=nums[i];
         }
-
-
         for(int i = 0; i < steps.length-1; i++) {
             steps[i]=max+1000;
         }
-
-
         for(int i = nums.length-2; i >=0; i--) {
 
             for(int j = 0; j <= nums[i]; j++) {
@@ -38,15 +34,10 @@ public class Jump_Game_II {
                 else steps[i]=Math.min(steps[i+j]+1,steps[i]);
 //                System.out.println(i+"=>"+Arrays.toString(steps));
             }
-
-
-
-
         }
 //            System.out.println(Arrays.toString(nums));
 //            System.out.println(Arrays.toString(steps));
         return steps[0];
     }
-
 
 }
