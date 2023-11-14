@@ -5,15 +5,14 @@ public static void main(String[] args){
  }
 
     public static int maxArea(int[] height) {
-            int maxA=0,max1=0,max2=0;
+    int l=0,r= height.length,max=0;
+    while (l<r){
+        if (max<Math.min(height[l],height[r])*Math.abs(l-r))
+        if (height[l]>height[r]){r--;}
+        else {l++;}
+    }
 
-            for(int i = 0; i < height.length; i++) {
-                if (max1>height[i]){ max2=max1;max1=i; }
-//                if (maxA>)
-
-            }
-
-        return 0;
+        return max;
     }
 
 }
