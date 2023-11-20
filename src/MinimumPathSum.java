@@ -19,7 +19,7 @@ public class MinimumPathSum {
 
     private static void CalculatePath(int d, int r,int a, int b,int[][] grid, int[][] path) {
         if (d>=grid.length||r>= grid[0].length) return;
-        if (path[d+a][r+b]>path[d][r]+path[d+a][r+b] )
+//        if (path[d+a][r+b]>path[d][r]+path[d+a][r+b] )
 
     }
 }
