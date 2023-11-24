@@ -7,7 +7,22 @@ public class productOfArrayExceptSelf {
     int[] a=new int[]{1,2,3,4};
     System.out.println(Arrays.toString(productExceptSelf(a)));
     }
+
     public static int[] productExceptSelf(int[] nums) {
+        int[] out=new int[nums.length];
+        int pre=1,post=1;
+        for(int i = 0; i < out.length; i++) {
+            out[i]=pre;
+            pre*=nums[i];
+        }
+//        System.out.println(Arrays.toString(out));
+        for(int i = out.length-1; i>=0; i--) {
+            out[i]*=post;
+            post*=nums[i];
+        }
+//        System.out.println(Arrays.toString(out));
+        return out;}
+    public static int[] productExceptSelf1(int[] nums) {
         int[] post=new int[nums.length];
         int[] pre=new int[nums.length];
         pre[0]=nums[0];
