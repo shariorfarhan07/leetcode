@@ -1,6 +1,17 @@
 public class RemoveDuplicatesfromSortedList {
+    public ListNode deleteDuplicates(ListNode head) {
+        ListNode tail=head;
+        while (tail.next!=null){
+            if (tail.val==tail.next.val) tail.next=tail.next.next;
+            tail=tail.next;
+        }
+        return head;
+    }
+        public ListNode deleteDuplicates3(ListNode head) {
 
-        public ListNode deleteDuplicates(ListNode head) {
+
+
+
             if(head==null) return null;
             ListNode left=head;
             ListNode right=head;
