@@ -2,14 +2,26 @@ import java.util.*;
 
 public class Longest_Substring_Without_Repeating_Characters {
     public static void main(String[] args) {
-        System.out.println(lengthOfLongestSubstring3("abcabcbb"));
-        System.out.println(lengthOfLongestSubstring3("pwwkew"));
-        System.out.println(lengthOfLongestSubstring3("bbbbb"));
-        System.out.println(lengthOfLongestSubstring3("abcabcbb"));
-        System.out.println(lengthOfLongestSubstring3("abcd"));
+        System.out.println(lengthOfLongestSubstring("abcabcbb"));
+        System.out.println(lengthOfLongestSubstring("pwwkew"));
+        System.out.println(lengthOfLongestSubstring("bbbbb"));
+        System.out.println(lengthOfLongestSubstring("abcabcbb"));
+        System.out.println(lengthOfLongestSubstring("abcd"));
     }
 
-    private static int lengthOfLongestSubstring(String s) {
+    public static int lengthOfLongestSubstring(String s){
+        Set<Character> set =new TreeSet<>();
+        int j=0;
+        int max=0;
+        for(int i = 0; i < s.length(); i++) {
+            while (set.contains(s.charAt(i)))set.remove(s.charAt(j++));
+            set.add(s.charAt(i));
+            max=Math.max(max,set.size());
+        }
+        return max;
+    }
+
+    private static int lengthOfLongestSubstring222(String s) {
         Set<Character> set=new TreeSet<>();
         int l=0;
         int max=0;
