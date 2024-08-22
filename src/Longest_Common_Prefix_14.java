@@ -1,4 +1,27 @@
 public class Longest_Common_Prefix_14 {
+
+    public String longestCommonPrefix8(String[] strs) {
+        int count =0;
+        int len =Integer.MAX_VALUE;
+        for (String s : strs) len=Math.min(len,s.length());
+        boolean b=false;
+        for(int j = 0; j <len-1 ; j++) {
+            count++;
+            for(int i = 0; i < strs.length-1; i++) {
+                if (strs[i].charAt(j)==strs[i+1].charAt(j)){
+
+                }else{
+                    b=true;
+                    break;
+                }
+                if (b) break;
+            }
+        }
+        return strs[0].substring(0,count);
+    }
+
+
+
     public String longestCommonPrefix1(String[] strs) {
         int length=0;
         int stringlen=0;
@@ -35,6 +58,6 @@ public class Longest_Common_Prefix_14 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Longest_Common_Prefix_14().longestCommonPrefix(new String[]{"flower", "flow", "flight"}));
+        System.out.println(new Longest_Common_Prefix_14().longestCommonPrefix8(new String[]{"flower", "flow", "flight"}));
     }
 }
