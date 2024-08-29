@@ -1,7 +1,4 @@
-import java.util.Comparator;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.*;
 
 public class interview {
     public static void main(String[] args) {
@@ -21,6 +18,8 @@ public class interview {
         m.put(4, 22);
         m.put(5, 22);
         System.out.println(m);
+        Set<String> set =new HashSet<>();
+        Map<?,?> mapp =new HashMap<>();
 
         // Removing the last entry (the highest key)
         Set<String> lastKey = map.keySet();
