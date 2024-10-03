@@ -3,6 +3,11 @@ import java.util.Map;
 import java.util.Stack;
 
 public class ValidParentheses {
+    public static void main(String[] args) {
+        System.out.println(new ValidParentheses().isValid("()[]{}"));
+        System.out.println(new ValidParentheses().isValid("(]{}"));
+    }
+
     public boolean isValid2(String s) {
         Stack<Character> parenthesis=new Stack<>();
         Map<Character,Character> map =new HashMap<>();
@@ -17,6 +22,7 @@ public class ValidParentheses {
         }
         return parenthesis.isEmpty();
     }
+
     public boolean isValid(String s) {
         Stack<Character> parenthesis=new Stack<>();
         char catchh;
@@ -32,10 +38,5 @@ public class ValidParentheses {
             }
         }
         return parenthesis.isEmpty();
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new ValidParentheses().isValid("()[]{}"));
-        System.out.println(new ValidParentheses().isValid("(]{}"));
     }
 }

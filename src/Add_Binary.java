@@ -1,5 +1,12 @@
 public class Add_Binary {
 
+    public static void main(String[] args) {
+        System.out.println(new Add_Binary().addBinary("110010","10111"));
+        System.out.println(new Add_Binary().addBinary1("110010","10111"));
+        System.out.println(new Add_Binary().addBinary("111","111"));
+        System.out.println(new Add_Binary().addBinary1("111","111"));
+    }
+
     public String addBinary(String a, String b) {
 
         StringBuilder sb=new StringBuilder();
@@ -17,8 +24,7 @@ public class Add_Binary {
 
     return sb.reverse().toString();
     }
-
-
+//"1001001"
 
     public String addBinary1(String a, String b) {
        int aa=a.length()-1,bb=b.length()-1;
@@ -66,13 +72,5 @@ public class Add_Binary {
         if (temp=="1") s="1"+s;
 
        return s;
-    }
-//"1001001"
-
-    public static void main(String[] args) {
-        System.out.println(new Add_Binary().addBinary("110010","10111"));
-        System.out.println(new Add_Binary().addBinary1("110010","10111"));
-        System.out.println(new Add_Binary().addBinary("111","111"));
-        System.out.println(new Add_Binary().addBinary1("111","111"));
     }
 }

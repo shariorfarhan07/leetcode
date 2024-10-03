@@ -5,22 +5,7 @@ class GFG {
 
     static final int COUNT = 10;
 
-    // A binary tree node
-    static class Node {
-        int data;
-        Node left, right;
-
-        /* Constructor that allocates a new node with the
-        given data and null left and right pointers. */
-        Node(int data)
-        {
-            this.data = data;
-            this.left = null;
-            this.right = null;
-        }
-    };
-
-    // Function to print binary tree in 2D
+        // Function to print binary tree in 2D
     // It does reverse inorder traversal
     static void print2DUtil(Node root, int space)
     {
@@ -46,7 +31,7 @@ class GFG {
 
         // Process left child
         print2DUtil(root.left, space);
-    }
+    };
 
     // Wrapper over print2DUtil()
     static void print2D(Node root)
@@ -77,5 +62,20 @@ class GFG {
         root.right.right.right = new Node(15);
 
         print2D(root);
+    }
+
+// A binary tree node
+    static class Node {
+        int data;
+        Node left, right;
+
+        /* Constructor that allocates a new node with the
+        given data and null left and right pointers. */
+        Node(int data)
+        {
+            this.data = data;
+            this.left = null;
+            this.right = null;
+        }
     }
 }

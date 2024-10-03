@@ -1,6 +1,11 @@
 import java.util.Hashtable;
 //16%
 public class Roman_to_Integer {
+    public static void main(String[] args) {
+        Roman_to_Integer obj=new Roman_to_Integer();
+        System.out.println(obj.romanToInt("MCDLXXVI"));
+    }
+
     public int romanToInt(String s) {
         Hashtable<Character,Integer> roman=new Hashtable<>();
         roman.put('I',1);
@@ -36,11 +41,5 @@ public class Roman_to_Integer {
 
 
         return sum;
-    }
-
-
-    public static void main(String[] args) {
-        Roman_to_Integer obj=new Roman_to_Integer();
-        System.out.println(obj.romanToInt("MCDLXXVI"));
     }
 }

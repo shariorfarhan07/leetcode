@@ -1,6 +1,13 @@
 import java.util.Arrays;
 
 public class MergeSortedArray {
+    public static void main(String[] args) {
+        int[]a= {1,2,3,0,0,0};
+        int[]b= {1,2,3};
+        new MergeSortedArray().merge(a,3,b,3);
+        System.out.println(Arrays.toString(a));
+    }
+
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         int[] nw = new int[n + m];
         int i = 0, i1 = 0, i2 = 0;
@@ -17,12 +24,5 @@ public class MergeSortedArray {
            nums2[j]= nw[j] ;
         }
 
-    }
-
-    public static void main(String[] args) {
-        int[]a= {1,2,3,0,0,0};
-        int[]b= {1,2,3};
-        new MergeSortedArray().merge(a,3,b,3);
-        System.out.println(Arrays.toString(a));
     }
 }

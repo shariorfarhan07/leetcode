@@ -1,6 +1,8 @@
 import java.util.Arrays;
 
 public class ClimbingStairs_with_memoization {
+     static int m[];//memoization
+
     public static void main(String[] args) {
 
         System.out.println(climbStairs(2));
@@ -11,7 +13,7 @@ public class ClimbingStairs_with_memoization {
 
 
     }
-     static int m[];//memoization
+
     public static int climbStairs(int n) {
         System.out.println(n);
     if (m==null){

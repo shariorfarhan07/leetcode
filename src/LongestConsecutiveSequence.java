@@ -4,12 +4,14 @@ import java.util.HashSet;
 import java.util.Map;
 
 public class LongestConsecutiveSequence {
+    HashSet<Integer>  uniqueNumbers;
+    HashMap<Integer,ArrayList<Integer>> adjlist;
+
     public static void main(String[] args){
         System.out.println(new LongestConsecutiveSequence().longestConsecutive(new int[]{100,4,200,1,3,2}));
 
 }
-    HashSet<Integer>  uniqueNumbers;
-    HashMap<Integer,ArrayList<Integer>> adjlist;
+
     public int longestConsecutive(int[] nums) {
         adjlist=new HashMap<>();
         uniqueNumbers=new HashSet<>();

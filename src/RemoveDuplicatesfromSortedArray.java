@@ -1,6 +1,10 @@
 import java.util.Arrays;
 
 public class RemoveDuplicatesfromSortedArray {
+    public static void main(String[] args) {
+        System.out.println(new RemoveDuplicatesfromSortedArray().removeDuplicates2(new int[]{1, 1, 1, 2, 2, 3, 4, 5, 6,6, 7,}));
+    }
+
     /*sliding window algo 0(n) time
     * solve it in a more efficient way with 2 pointer
     * */
@@ -19,7 +23,6 @@ public class RemoveDuplicatesfromSortedArray {
 //        System.out.println(Arrays.toString(nums));
         return ret;
     }
-
 
     // time complexity =o(n^2)
     public int removeDuplicates(int[] nums) {
@@ -60,9 +63,5 @@ public class RemoveDuplicatesfromSortedArray {
 
         }
         return  count;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new RemoveDuplicatesfromSortedArray().removeDuplicates2(new int[]{1, 1, 1, 2, 2, 3, 4, 5, 6,6, 7,}));
     }
 }

@@ -1,4 +1,19 @@
 public class RemoveDuplicatesfromSortedList {
+    public static void main(String[] args) {
+        ListNode l=new  ListNode(1,new  ListNode(1,new  ListNode(2,new  ListNode(2,new  ListNode(2,null)))));
+//         l=new  ListNode(1,new  ListNode(1,new  ListNode(2,null)));
+        l=new RemoveDuplicatesfromSortedList().deleteDuplicates(l);
+        print(l);
+//        for (int i = 0; i < 50; i=i+2) {
+//            System.out.println(i);
+//        }
+  }
+
+    public static void print(ListNode n){
+        System.out.println(n.val);
+        if (n.next!= null) print(n.next);
+    }
+
     public ListNode deleteDuplicates(ListNode head) {
         ListNode tail=head;
         while (tail.next!=null){
@@ -7,6 +22,7 @@ public class RemoveDuplicatesfromSortedList {
         }
         return head;
     }
+
         public ListNode deleteDuplicates3(ListNode head) {
 
 
@@ -41,20 +57,6 @@ public class RemoveDuplicatesfromSortedList {
                 break;
         }
         return head;
-    }
-
-    public static void main(String[] args) {
-        ListNode l=new  ListNode(1,new  ListNode(1,new  ListNode(2,new  ListNode(2,new  ListNode(2,null)))));
-//         l=new  ListNode(1,new  ListNode(1,new  ListNode(2,null)));
-        l=new RemoveDuplicatesfromSortedList().deleteDuplicates(l);
-        print(l);
-//        for (int i = 0; i < 50; i=i+2) {
-//            System.out.println(i);
-//        }
-  }
-    public static void print(ListNode n){
-        System.out.println(n.val);
-        if (n.next!= null) print(n.next);
     }
 
 }

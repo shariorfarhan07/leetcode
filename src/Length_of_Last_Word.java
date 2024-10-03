@@ -1,4 +1,8 @@
 public class Length_of_Last_Word {
+    public static void main(String[] args) {
+        System.out.println(new Length_of_Last_Word().lengthOfLastWord("luffy is still joyboy"));
+    }
+
     public int lengthOfLastWord(String s) {
         int len=s.length();
         int pointer=len-1;
@@ -13,9 +17,5 @@ public class Length_of_Last_Word {
 
         }
         return end-pointer;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new Length_of_Last_Word().lengthOfLastWord("luffy is still joyboy"));
     }
 }

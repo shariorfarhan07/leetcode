@@ -1,6 +1,14 @@
 public class RootEqualsSumofChildren {
 
 
+    public boolean checkTree(TreeNode root) {
+    if (root==null) return true;
+    int right=(root.right==null)?0:root.right.val;
+    int left=(root.left==null)?0:root.left.val;
+    if (root.val==left+right) return true;
+    return false;
+    }
+
       static class TreeNode {
           int val;
           TreeNode left;
@@ -13,15 +21,4 @@ public class RootEqualsSumofChildren {
               this.right = right;
           }
       }
-
-
-
-
-    public boolean checkTree(TreeNode root) {
-    if (root==null) return true;
-    int right=(root.right==null)?0:root.right.val;
-    int left=(root.left==null)?0:root.left.val;
-    if (root.val==left+right) return true;
-    return false;
-    }
 }

@@ -1,14 +1,24 @@
 package test;
 
 
+import java.util.ArrayList;
+
 public class test1 {
     public static void main(String[] args) {
-        int [] a={2,2,1,6,1,4,4,5,5,6};
-        int sum=0;
-        for (int i = 0; i < a.length; i++) {
-            sum=sum^a[i];
-        }
-        System.out.println(sum);
+     int a =333;
+     Object b =a;
+     test(a);
+     test(b);
+        Object obj = new ArrayList<>();
 
+        Class<?> clazz = obj.getClass();
+        System.out.println("Object is of type: " + clazz.getName());
+
+    }
+    public static void test(int a){
+        System.out.println(a);
+    }
+    public static void test(Object a){
+        System.out.println(a+"this one");
     }
 }

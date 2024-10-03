@@ -11,14 +11,6 @@ public class ValidAnagram {
 
     }
 
-    public boolean isAnagramBestone(String s, String t) {
-        int[] alphabet = new int[26];
-        for (int i = 0; i < s.length(); i++) alphabet[s.charAt(i) - 'a']++;
-        for (int i = 0; i < t.length(); i++) alphabet[t.charAt(i) - 'a']--;
-        for (int i : alphabet) if (i != 0) return false;
-        return true;
-    }
-
     public static boolean isAnagramFormated(String s, String t) {
         if (s.length()!=t.length()) return false;
         HashMap<Character,Integer> h1=new HashMap<>();
@@ -38,9 +30,6 @@ public class ValidAnagram {
             integer = (h.get(s.charAt(i)) == null) ? h.put(s.charAt(i), 1) : h.put(s.charAt(i), h.get(s.charAt(i)) + 1);
         }
     }
-
-
-
 
     public static boolean isAnagram(String s, String t) {
     if (s.length()!=t.length()) return false;
@@ -64,5 +53,13 @@ public class ValidAnagram {
             if (((int)h2.get(b.getKey()))!=((int)b.getValue())) return false;
         }
         return  true;
+    }
+
+    public boolean isAnagramBestone(String s, String t) {
+        int[] alphabet = new int[26];
+        for (int i = 0; i < s.length(); i++) alphabet[s.charAt(i) - 'a']++;
+        for (int i = 0; i < t.length(); i++) alphabet[t.charAt(i) - 'a']--;
+        for (int i : alphabet) if (i != 0) return false;
+        return true;
     }
 }

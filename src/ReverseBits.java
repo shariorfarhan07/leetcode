@@ -1,4 +1,8 @@
 public class ReverseBits {
+    public static void main(String[] args) {
+        System.out.println(new ReverseBits().reverseBits( 100));
+    }
+
 //    need Unsigned integer to solve it and java doesnt have it
 public int reverseBits(int  n) {
     int newbit=0;
@@ -10,6 +14,7 @@ public int reverseBits(int  n) {
     }
     return newbit;
 }
+
     public int reverseBits1(int  n) {
         int count=31,sum=0,sign=1;
         while (count>-1){
@@ -22,9 +27,5 @@ public int reverseBits(int  n) {
         }
         System.out.println();
         return  sum*sign;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new ReverseBits().reverseBits( 100));
     }
 }

@@ -1,4 +1,8 @@
 public class Greatest_Common_Divisor_of_Strings {
+    private static int gcd(int a,int b){
+        return (b==0)?a:gcd(b,a%b);
+    }
+
     public String gcdOfStrings(String str1, String str2) {
     String t1=str1+str2;
     String t2=str2+str1;
@@ -7,9 +11,6 @@ public class Greatest_Common_Divisor_of_Strings {
     }
     return "";
 
-    }
-    private static int gcd(int a,int b){
-        return (b==0)?a:gcd(b,a%b);
     }
 
 

@@ -1,5 +1,9 @@
 public class Longest_Common_Prefix_14 {
 
+    public static void main(String[] args) {
+        System.out.println(new Longest_Common_Prefix_14().longestCommonPrefix8(new String[]{"flower", "flow", "flight"}));
+    }
+
     public String longestCommonPrefix8(String[] strs) {
         int count =0;
         int len =Integer.MAX_VALUE;
@@ -20,8 +24,6 @@ public class Longest_Common_Prefix_14 {
         return strs[0].substring(0,count);
     }
 
-
-
     public String longestCommonPrefix1(String[] strs) {
         int length=0;
         int stringlen=0;
@@ -38,6 +40,7 @@ public class Longest_Common_Prefix_14 {
 
         return strs[0].substring(0,min);
     }
+
 // feels weird  I wrote both of the codes second one is much simpler than the first one
     public String longestCommonPrefix(String[] strs) {
         if (strs.length==1) return strs[1];
@@ -55,9 +58,5 @@ public class Longest_Common_Prefix_14 {
         }
         if (min==Integer.MAX_VALUE||min == 0) return "";
         return strs[0].substring(0,min);
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new Longest_Common_Prefix_14().longestCommonPrefix8(new String[]{"flower", "flow", "flight"}));
     }
 }
