@@ -24,4 +24,21 @@ public class Trapping_Rain_Water {
 
     return 0;}
 
+    public static int trap0(int[] height) {
+        int sum=0,leftMax=height[0],rightMax=height[height.length-1],l=0,r=height.length-1;
+        while (l<r){
+            if (height[l]<height[r]){
+                leftMax=Math.max(leftMax,height[l]);
+                sum+= Math.max((leftMax - height[l]), 0);
+                l++;
+            }else{
+                rightMax=Math.max(leftMax,height[r]);
+                sum+= Math.max((rightMax - height[r]), 0);
+                r--;
+            }
+        }
+        return sum;
+    }
+
+
 }
